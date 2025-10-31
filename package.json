@@ -23,6 +23,7 @@
     "test:comparison": "node scripts/utilities/compare-implementations.js",
     "test:watch": "mocha src/tests/**/*.test.js --watch",
     "validate": "node scripts/utilities/validate-data-model.js",
+    "verify": "node scripts/utilities/verify-fluent-app.js",
     "setup": "node scripts/setup/initial-setup.js",
     "setup:tables": "node scripts/setup/create-tables.js",
     "setup:data": "node scripts/setup/seed-data.js",
@@ -46,8 +47,6 @@
   "author": "Planning Poker Team",
   "license": "MIT",
   "devDependencies": {
-    "@servicenow/eslint-config-servicenow": "^3.0.0",
-    "@servicenow/cli": "^1.0.0",
     "chai": "^4.3.10",
     "dotenv": "^16.3.1",
     "eslint": "^8.52.0",
