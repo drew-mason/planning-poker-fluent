@@ -1,0 +1,79 @@
+{
+  "label": "Scoring Value (Fluent)",
+  "name": "x_902080_msmplnpkr_fluent_scoring_value",
+  "extends": "",
+  "is_extendable": false,
+  "access": "public",
+  "create_access_controls": true,
+  "live_feed_enabled": false,
+  "fields": [
+    {
+      "name": "scoring_method",
+      "type": "reference",
+      "reference": "x_902080_msmplnpkr_fluent_scoring_method",
+      "mandatory": true,
+      "label": "Scoring Method",
+      "description": "Parent scoring method"
+    },
+    {
+      "name": "value",
+      "type": "string",
+      "max_length": 40,
+      "mandatory": true,
+      "label": "Value",
+      "description": "Display value (e.g., 'XS', '5', '?')"
+    },
+    {
+      "name": "numeric_value",
+      "type": "decimal",
+      "mandatory": false,
+      "label": "Numeric Value",
+      "description": "Numeric equivalent for calculations (if applicable)"
+    },
+    {
+      "name": "order",
+      "type": "integer",
+      "mandatory": true,
+      "default_value": "0",
+      "label": "Display Order",
+      "description": "Sort sequence in voting UI"
+    },
+    {
+      "name": "is_special",
+      "type": "boolean",
+      "mandatory": true,
+      "default_value": "false",
+      "label": "Is Special",
+      "description": "Whether this is a special value (?, Coffee, etc.)"
+    },
+    {
+      "name": "description",
+      "type": "string",
+      "max_length": 500,
+      "mandatory": false,
+      "label": "Description",
+      "description": "Explanation of what this value represents"
+    },
+    {
+      "name": "created_on",
+      "type": "glide_date_time",
+      "mandatory": false,
+      "label": "Created On",
+      "read_only": true
+    }
+  ],
+  "indexes": [
+    {
+      "name": "idx_value_method_order",
+      "fields": ["scoring_method", "order"],
+      "unique": false,
+      "description": "Optimized for retrieving ordered values"
+    },
+    {
+      "name": "idx_value_method_value",
+      "fields": ["scoring_method", "value"],
+      "unique": true,
+      "description": "Ensure unique values per method"
+    }
+  ]
+}

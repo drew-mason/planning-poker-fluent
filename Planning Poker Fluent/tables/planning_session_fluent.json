@@ -1,0 +1,182 @@
+{
+  "label": "Planning Session (Fluent)",
+  "name": "x_902080_msmplnpkr_fluent_planning_session",
+  "extends": "",
+  "is_extendable": false,
+  "access": "public",
+  "create_access_controls": true,
+  "live_feed_enabled": false,
+  "fields": [
+    {
+      "name": "name",
+      "type": "string",
+      "max_length": 255,
+      "mandatory": true,
+      "label": "Session Name",
+      "description": "Name of the planning session"
+    },
+    {
+      "name": "description",
+      "type": "string",
+      "max_length": 4000,
+      "mandatory": false,
+      "label": "Description",
+      "description": "Session purpose and context"
+    },
+    {
+      "name": "dealer",
+      "type": "reference",
+      "reference": "sys_user",
+      "mandatory": true,
+      "label": "Session Dealer",
+      "description": "User who manages the session"
+    },
+    {
+      "name": "scoring_method",
+      "type": "reference",
+      "reference": "x_902080_msmplnpkr_fluent_scoring_method",
+      "mandatory": true,
+      "label": "Scoring Method",
+      "description": "Voting scale for this session"
+    },
+    {
+      "name": "status",
+      "type": "string",
+      "max_length": 40,
+      "mandatory": true,
+      "default_value": "pending",
+      "label": "Status",
+      "description": "Session lifecycle state",
+      "choice": [
+        {"value": "pending", "label": "Pending", "sequence": 0},
+        {"value": "active", "label": "Active", "sequence": 1},
+        {"value": "completed", "label": "Completed", "sequence": 2},
+        {"value": "cancelled", "label": "Cancelled", "sequence": 3}
+      ]
+    },
+    {
+      "name": "current_story",
+      "type": "reference",
+      "reference": "x_902080_msmplnpkr_fluent_session_stories",
+      "mandatory": false,
+      "label": "Current Story",
+      "description": "Story currently being voted on"
+    },
+    {
+      "name": "start_time",
+      "type": "glide_date_time",
+      "mandatory": false,
+      "label": "Start Time",
+      "description": "When session started"
+    },
+    {
+      "name": "end_time",
+      "type": "glide_date_time",
+      "mandatory": false,
+      "label": "End Time",
+      "description": "When session ended"
+    },
+    {
+      "name": "total_stories",
+      "type": "integer",
+      "mandatory": true,
+      "default_value": "0",
+      "label": "Total Stories",
+      "description": "Count of all stories in session",
+      "read_only": true
+    },
+    {
+      "name": "stories_completed",
+      "type": "integer",
+      "mandatory": true,
+      "default_value": "0",
+      "label": "Stories Completed",
+      "description": "Count of completed stories",
+      "read_only": true
+    },
+    {
+      "name": "stories_skipped",
+      "type": "integer",
+      "mandatory": true,
+      "default_value": "0",
+      "label": "Stories Skipped",
+      "description": "Count of skipped stories",
+      "read_only": true
+    },
+    {
+      "name": "total_votes",
+      "type": "integer",
+      "mandatory": true,
+      "default_value": "0",
+      "label": "Total Votes",
+      "description": "Count of all votes cast",
+      "read_only": true
+    },
+    {
+      "name": "allow_spectators",
+      "type": "boolean",
+      "mandatory": true,
+      "default_value": "true",
+      "label": "Allow Spectators",
+      "description": "Whether non-participants can observe"
+    },
+    {
+      "name": "auto_reveal",
+      "type": "boolean",
+      "mandatory": true,
+      "default_value": "false",
+      "label": "Auto Reveal",
+      "description": "Automatically reveal when all votes are in"
+    },
+    {
+      "name": "created_by",
+      "type": "reference",
+      "reference": "sys_user",
+      "mandatory": false,
+      "label": "Created By",
+      "read_only": true
+    },
+    {
+      "name": "created_on",
+      "type": "glide_date_time",
+      "mandatory": false,
+      "label": "Created On",
+      "read_only": true
+    },
+    {
+      "name": "updated_by",
+      "type": "reference",
+      "reference": "sys_user",
+      "mandatory": false,
+      "label": "Updated By",
+      "read_only": true
+    },
+    {
+      "name": "updated_on",
+      "type": "glide_date_time",
+      "mandatory": false,
+      "label": "Updated On",
+      "read_only": true
+    }
+  ],
+  "indexes": [
+    {
+      "name": "idx_session_status_dealer",
+      "fields": ["status", "dealer"],
+      "unique": false,
+      "description": "Optimized for dealer dashboard queries"
+    },
+    {
+      "name": "idx_session_status_created",
+      "fields": ["status", "created_on"],
+      "unique": false,
+      "description": "Optimized for recent session queries"
+    },
+    {
+      "name": "idx_session_dealer_status",
+      "fields": ["dealer", "status", "created_on"],
+      "unique": false,
+      "description": "Composite index for Fluent queries"
+    }
+  ]
+}

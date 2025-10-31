@@ -1,0 +1,23 @@
+# Fluent Application Manifest
+# This file identifies this repository as a ServiceNow Fluent Application
+
+[application]
+type = "fluent"
+name = "Planning Poker Fluent"
+scope = "x_902080_msmplnpkr_fluent"
+version = "1.0.0"
+
+[fluent]
+enabled = true
+framework = "GlideQuery"
+performance_target = "30-60% improvement"
+
+[patterns]
+functional_programming = true
+error_handling_orElse = true
+reference_field_navigation = true
+query_optimization = true
+
+[servicenow]
+min_version = "Quebec"
+target_version = "Vancouver"

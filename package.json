@@ -1,68 +1,8 @@
 {
-  "name": "planning-poker-fluent",
-  "version": "0.1.0",
-  "description": "Planning Poker ServiceNow Application - Fluent Rebuild",
-  "main": "index.js",
-  "scripts": {
-    "dev": "npm run watch",
-    "watch": "nodemon --watch src --exec npm run sync",
-    "sync": "snc apply --scope x_902080_msmplnpkr_fluent",
-    "sync:tables": "snc apply --scope x_902080_msmplnpkr_fluent src/tables",
-    "sync:server": "snc apply --scope x_902080_msmplnpkr_fluent src/server",
-    "sync:client": "snc apply --scope x_902080_msmplnpkr_fluent src/client",
-    "deploy": "npm run lint && npm run test && npm run sync",
-    "deploy:dev": "snc apply --scope x_902080_msmplnpkr_fluent --target dev",
-    "deploy:test": "snc apply --scope x_902080_msmplnpkr_fluent --target test",
-    "deploy:prod": "snc apply --scope x_902080_msmplnpkr_fluent --target prod",
-    "lint": "eslint src/**/*.js scripts/**/*.js",
-    "lint:fix": "eslint src/**/*.js scripts/**/*.js --fix",
-    "test": "npm run test:unit && npm run test:integration",
-    "test:unit": "mocha src/tests/unit/**/*.test.js",
-    "test:integration": "mocha src/tests/integration/**/*.test.js --timeout 30000",
-    "test:performance": "node scripts/utilities/performance-benchmark.js",
-    "test:comparison": "node scripts/utilities/compare-implementations.js",
-    "test:watch": "mocha src/tests/**/*.test.js --watch",
-    "validate": "node scripts/utilities/validate-data-model.js",
-    "verify": "node scripts/utilities/verify-fluent-app.js",
-    "setup": "node scripts/setup/initial-setup.js",
-    "setup:tables": "node scripts/setup/create-tables.js",
-    "setup:data": "node scripts/setup/seed-data.js",
-    "setup:indexes": "node scripts/setup/create-indexes.js",
-    "compare": "npm run test:comparison",
-    "benchmark": "npm run test:performance",
-    "docs": "jsdoc src -r -d docs/api",
-    "clean": "rm -rf .snc .sn-cache dist build",
-    "version:bump": "npm version patch -m 'Bump version to %s'",
-    "ci": "npm run lint && npm run test && npm run validate",
-    "precommit": "npm run lint && npm run test:unit"
-  },
-  "keywords": [
-    "servicenow",
-    "planning-poker",
-    "agile",
-    "estimation",
-    "fluent",
-    "glidequery"
-  ],
-  "author": "Planning Poker Team",
-  "license": "MIT",
-  "devDependencies": {
-    "chai": "^4.3.10",
-    "dotenv": "^16.3.1",
-    "eslint": "^8.52.0",
-    "jsdoc": "^4.0.2",
-    "mocha": "^10.2.0",
-    "nodemon": "^3.0.1",
-    "sinon": "^17.0.1"
-  },
+  "name": "now",
+  "version": "1.0.0",
   "dependencies": {
-    "axios": "^1.6.0",
-    "chalk": "^4.1.2",
-    "cli-table3": "^0.6.3",
-    "commander": "^11.1.0"
-  },
-  "engines": {
-    "node": ">=18.0.0",
-    "npm": ">=9.0.0"
+    "dotenv": "^17.2.3",
+    "eslint": "5.6.0"
   }
 }

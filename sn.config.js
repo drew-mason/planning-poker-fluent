@@ -44,10 +44,10 @@ module.exports = {
    * Source directory mappings
    */
   paths: {
-    tables: './src/tables',
-    server: './src/server',
-    client: './src/client',
-    tests: './src/tests',
+    tables: './Planning Poker Fluent/src/tables',
+    server: './Planning Poker Fluent/src/server',
+    client: './Planning Poker Fluent/src/client',
+    tests: './Planning Poker Fluent/src/tests',
     scripts: './scripts'
   },
 
@@ -57,9 +57,9 @@ module.exports = {
   sync: {
     autoSync: false,
     include: [
-      'src/tables/**/*.json',
-      'src/server/**/*.js',
-      'src/client/**/*.js'
+      'Planning Poker Fluent/src/tables/**/*.json',
+      'Planning Poker Fluent/src/server/**/*.js',
+      'Planning Poker Fluent/src/client/**/*.js'
     ],
     exclude: [
       '**/*.test.js',

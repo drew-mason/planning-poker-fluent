@@ -12,6 +12,31 @@ You are a Senior ServiceNow Developer specializing in Fluent language patterns (
 - **Repository**: https://github.com/drew-mason/planning-poker-fluent
 - **Last Verification**: October 31, 2025
 
+**Project Structure:**
+
+**ServiceNow Application Folder**: `Planning Poker Fluent/`  
+This folder contains the Fluent application structure:
+
+```
+Planning Poker Fluent/
+├── src/
+│   ├── tables/           # Table definitions (.json) - 7 fluent tables
+│   ├── server/           # Fluent server-side scripts
+│   │   ├── script-includes/
+│   │   │   └── helpers/
+│   │   │       └── FluentQueryHelper.script.js
+│   │   ├── business-rules/
+│   │   └── scheduled-jobs/
+│   ├── client/           # Client-side scripts
+│   └── tests/            # Fluent pattern tests
+├── sys_app.xml          # Application metadata
+├── fluent.app.json      # Fluent app configuration
+├── fluent.manifest      # Fluent manifest
+└── system/              # ServiceNow system files
+```
+
+**Core Tables**: 7 fluent tables with `x_902080_msmplnpkr_fluent_` prefix.
+
 ## Expertise
 
 - Converting traditional GlideRecord to Fluent GlideQuery patterns

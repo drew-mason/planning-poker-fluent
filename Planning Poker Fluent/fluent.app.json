@@ -1,0 +1,47 @@
+{
+  "_type": "fluent_application",
+  "fluent": true,
+  "application_type": "fluent",
+  "metadata": {
+    "name": "Planning Poker Fluent",
+    "scope": "x_902080_msmplnpkr_fluent",
+    "version": "1.0.0",
+    "description": "Planning Poker application built with Fluent (GlideQuery) patterns",
+    "sys_id": "a1b2c3d4e5f6789012345678901234567"
+  },
+  "fluent_config": {
+    "query_framework": "GlideQuery",
+    "performance_target": "30-60% improvement",
+    "patterns": [
+      "functional_programming",
+      "error_handling_with_orElse",
+      "reference_field_navigation",
+      "query_optimization"
+    ],
+    "features": {
+      "auto_joins": true,
+      "type_safety": true,
+      "chainable_queries": true,
+      "functional_aggregations": true
+    }
+  },
+  "servicenow": {
+    "min_version": "Quebec",
+    "target_version": "Vancouver",
+    "compatibility": "Zurich+"
+  },
+  "components": {
+    "tables": [
+      "x_902080_msmplnpkr_fluent_planning_session_fluent",
+      "x_902080_msmplnpkr_fluent_session_stories_fluent",
+      "x_902080_msmplnpkr_fluent_planning_vote_fluent",
+      "x_902080_msmplnpkr_fluent_scoring_method_fluent",
+      "x_902080_msmplnpkr_fluent_scoring_value_fluent",
+      "x_902080_msmplnpkr_fluent_session_participant_fluent",
+      "x_902080_msmplnpkr_fluent_session_voter_groups_fluent"
+    ],
+    "script_includes": [
+      "FluentQueryHelper"
+    ]
+  }
+}

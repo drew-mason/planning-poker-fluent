@@ -1,0 +1,56 @@
+{
+  "label": "Session Voter Groups (Fluent)",
+  "name": "x_902080_msmplnpkr_fluent_session_voter_groups",
+  "extends": "",
+  "is_extendable": false,
+  "access": "public",
+  "create_access_controls": true,
+  "live_feed_enabled": false,
+  "fields": [
+    {
+      "name": "session",
+      "type": "reference",
+      "reference": "x_902080_msmplnpkr_fluent_planning_session",
+      "mandatory": true,
+      "label": "Planning Session",
+      "description": "Parent session"
+    },
+    {
+      "name": "group",
+      "type": "reference",
+      "reference": "sys_user_group",
+      "mandatory": true,
+      "label": "Voter Group",
+      "description": "Group with voting access"
+    },
+    {
+      "name": "is_active",
+      "type": "boolean",
+      "mandatory": true,
+      "default_value": "true",
+      "label": "Is Active",
+      "description": "Whether group access is active"
+    },
+    {
+      "name": "created_on",
+      "type": "glide_date_time",
+      "mandatory": false,
+      "label": "Created On",
+      "read_only": true
+    }
+  ],
+  "indexes": [
+    {
+      "name": "idx_voter_group_session",
+      "fields": ["session", "is_active"],
+      "unique": false,
+      "description": "Optimized for session group queries"
+    },
+    {
+      "name": "idx_voter_group_unique",
+      "fields": ["session", "group"],
+      "unique": true,
+      "description": "Ensure one record per group per session"
+    }
+  ]
+}
