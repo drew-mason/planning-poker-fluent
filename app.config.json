@@ -1,4 +1,6 @@
 {
+  "_type": "fluent_application",
+  "fluent": true,
   "name": "Planning Poker Fluent",
   "scope": "x_902080_msmplnpkr_fluent",
   "version": "1.0.0",
