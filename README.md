@@ -2,6 +2,13 @@
 
 A **ServiceNow application** for Planning Poker that has been rebuilt using modern **Fluent (GlideQuery)** patterns for improved performance, maintainability, and developer experience.
 
+## Current Environment
+
+**🌐 Instance**: `dev353895.service-now.com` (Zurich Release)  
+**🔧 CLI Status**: ✅ Authorized (ServiceNow CLI v1.1.2)  
+**📦 Scope**: `x_902080_msmplnpkr_fluent`  
+**📅 Last Updated**: October 31, 2025
+
 ## Project Status
 
 **Phase 0: Setup & Infrastructure** - IN PROGRESS

@@ -2,6 +2,11 @@
  * ServiceNow SDK Configuration
  *
  * This file configures the ServiceNow CLI for the Fluent Planning Poker application.
+ * 
+ * Current Instance: dev353895.service-now.com (Zurich Release)
+ * CLI Status: Authorized and working (v1.1.2)
+ * Last Updated: October 31, 2025
+ * 
  * See: https://developer.servicenow.com/dev.do#!/reference/cli/latest
  */
 

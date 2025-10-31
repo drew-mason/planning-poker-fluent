@@ -2,7 +2,13 @@
 
 Get up and running in 10 minutes!
 
-## Prerequisites Check
+# Quick Start Guide - Planning Poker Fluent
+
+**🎯 Current Environment**: `dev353895.service-now.com` (Zurich Release)  
+**📅 Last Updated**: October 31, 2025  
+**✅ Status**: CLI Authorized and Ready for Deployment
+
+## Prerequisites
 
 ```bash
 node --version   # Should be v18.0.0+

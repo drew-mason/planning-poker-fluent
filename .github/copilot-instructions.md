@@ -1,5 +1,13 @@
 # AI Agent Instructions - Planning Poker Fluent
 
+## Current Environment Status
+
+**🌐 ServiceNow Instance**: `dev353895.service-now.com` (Zurich Release)  
+**🔧 CLI Authorization**: ✅ ServiceNow CLI v1.1.2 (Basic Auth)  
+**📦 Application Scope**: `x_902080_msmplnpkr_fluent`  
+**🔄 Last Updated**: October 31, 2025  
+**📊 Fluent App Status**: ✅ Verified (21/21 checks passed)
+
 ## Project Overview
 This is a **complete rebuild** of a ServiceNow Planning Poker application using **Fluent (GlideQuery)** patterns instead of traditional GlideRecord. The goal is 30-60% performance improvement through modern query patterns.
 
