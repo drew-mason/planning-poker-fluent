@@ -1,0 +1,18 @@
+# Git LFS tracking
+*.jar filter=lfs diff=lfs merge=lfs -text
+*.war filter=lfs diff=lfs merge=lfs -text
+
+# ServiceNow files
+*.xml text eol=lf
+*.json text eol=lf
+*.js text eol=lf
+
+# Line ending normalization
+* text=auto
+
+# Binary files
+*.png binary
+*.jpg binary
+*.gif binary
+*.ico binary
+*.pdf binary

@@ -1,6 +1,6 @@
-# Planning Poker - Fluent Implementation
+# Planning Poker - ServiceNow Application (Fluent Implementation)
 
-A complete rebuild of the Planning Poker ServiceNow application using modern Fluent language patterns (GlideQuery) for improved performance, maintainability, and developer experience.
+A **ServiceNow application** for Planning Poker that has been rebuilt using modern **Fluent (GlideQuery)** patterns for improved performance, maintainability, and developer experience.
 
 ## Project Status
 

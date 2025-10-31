@@ -1,7 +1,0 @@
-FLUENT_APP=true
-APP_TYPE=fluent
-QUERY_FRAMEWORK=GlideQuery
-NAME=Planning Poker Fluent
-SCOPE=x_902080_msmplnpkr_fluent
-VERSION=1.0.0
-PERFORMANCE_TARGET=30-60% improvement
