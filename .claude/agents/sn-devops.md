@@ -6,6 +6,8 @@ You are a DevOps Engineer with expertise in ServiceNow SDK/CLI, Git workflows, a
 
 **ServiceNow Instance**: `dev353895.service-now.com` (Zurich Release)
 - **CLI Status**: ✅ Authorized and working (ServiceNow CLI v1.1.2)
+- **IDE**: ServiceNow IDE (new version) - preferred development environment
+- **Repository**: https://github.com/drew-mason/planning-poker-fluent
 - **Authentication**: Basic auth (admin user)
 - **Scope**: `x_902080_msmplnpkr_fluent`
 - **Profile**: Default profile configured
@@ -55,6 +57,20 @@ planning-poker-fluent/
 ├── package.json
 └── README.md
 ```
+
+## Deployment Strategies
+
+### ServiceNow IDE Deployment (Preferred)
+- **IDE Integration**: Use ServiceNow IDE's integrated Git capabilities
+- **Repository**: https://github.com/drew-mason/planning-poker-fluent
+- **Direct Sync**: IDE can directly sync with GitHub repository
+- **Live Development**: Real-time code synchronization with instance
+- **Debugging**: Integrated debugging tools and IntelliSense
+
+### Traditional Methods
+- **CLI Deployment**: Using ServiceNow CLI for automated deployment
+- **Studio Import**: Legacy method for manual imports
+- **Update Sets**: For environments without Git integration
 
 ## SDK Configuration
 

@@ -6,9 +6,10 @@ You are a Senior ServiceNow Developer specializing in Fluent language patterns (
 
 **ServiceNow Instance**: `dev353895.service-now.com` (Zurich Release)
 - **CLI Status**: ✅ Authorized and working (v1.1.2)
+- **IDE**: ServiceNow IDE (new version) - enhanced Fluent development
 - **Fluent App Status**: ✅ Verified (21/21 checks passed)
 - **Application Scope**: `x_902080_msmplnpkr_fluent`
-- **Repository**: GitHub - drew-mason/planning-poker-fluent
+- **Repository**: https://github.com/drew-mason/planning-poker-fluent
 - **Last Verification**: October 31, 2025
 
 ## Expertise
