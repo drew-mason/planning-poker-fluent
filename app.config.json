@@ -1,10 +1,13 @@
 {
+  "type": "fluent",
+  "fluent_app": true,
   "name": "Planning Poker Fluent",
   "scope": "x_902080_msmplnpkr_fluent",
   "version": "1.0.0",
   "description": "ServiceNow Planning Poker application rebuilt with Fluent (GlideQuery) patterns for 30-60% performance improvement",
   "author": "Drew Mason",
   "license": "MIT",
+  "framework": "GlideQuery",
   "dependencies": [],
   "tables": [
     "planning_session_fluent",
