@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?><unload unload_date="2025-10-31 00:00:00">
+<sys_remote_update_set action="INSERT_OR_UPDATE">
+<application display_value="Planning Poker Fluent">a1b2c3d4e5f6789012345678901234567</application>
+<application_name>Planning Poker Fluent</application_name>
+<application_scope>x_902080_msmplnpkr_fluent</application_scope>
+<application_version>1.0.0</application_version>
+<collisions/>
+<commit_date/>
+<deleted/>
+<description>Initial deployment of Planning Poker Fluent application with Fluent (GlideQuery) patterns</description>
+<inserted/>
+<name>Planning Poker Fluent v1.0.0</name>
+<origin_sys_id/>
+<parent/>
+<release_date/>
+<remote_sys_id>a1b2c3d4e5f6789012345678901234567</remote_sys_id>
+<state>loaded</state>
+<summary>Planning Poker application rebuilt for performance with 7 core tables and FluentQueryHelper utilities</summary>
+<sys_class_name>sys_remote_update_set</sys_class_name>
+<sys_created_by>admin</sys_created_by>
+<sys_created_on>2025-10-31 00:00:00</sys_created_on>
+<sys_id>b2c3d4e5f6789012345678901234567a</sys_id>
+<sys_mod_count>0</sys_mod_count>
+<sys_updated_by>admin</sys_updated_by>
+<sys_updated_on>2025-10-31 00:00:00</sys_updated_on>
+<update_set/>
+<updated/>
+</sys_remote_update_set>
+</unload>

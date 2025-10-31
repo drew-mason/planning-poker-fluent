@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<application>
+    <id>a1b2c3d4e5f6789012345678901234567</id>
+    <name>Planning Poker Fluent</name>
+    <scope>x_902080_msmplnpkr_fluent</scope>
+    <version>1.0.0</version>
+    <description>ServiceNow Planning Poker application rebuilt with Fluent (GlideQuery) patterns for 30-60% performance improvement</description>
+    <author>Drew Mason</author>
+    <created>2025-10-31</created>
+    <updated>2025-10-31</updated>
+    <dependencies/>
+    <tables>
+        <table>x_902080_msmplnpkr_fluent_planning_session_fluent</table>
+        <table>x_902080_msmplnpkr_fluent_session_stories_fluent</table>
+        <table>x_902080_msmplnpkr_fluent_planning_vote_fluent</table>
+        <table>x_902080_msmplnpkr_fluent_scoring_method_fluent</table>
+        <table>x_902080_msmplnpkr_fluent_scoring_value_fluent</table>
+        <table>x_902080_msmplnpkr_fluent_session_participant_fluent</table>
+        <table>x_902080_msmplnpkr_fluent_session_voter_groups_fluent</table>
+    </tables>
+    <scriptIncludes>
+        <scriptInclude>FluentQueryHelper</scriptInclude>
+    </scriptIncludes>
+</application>
