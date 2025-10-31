@@ -1,0 +1,87 @@
+{
+  "label": "Scoring Method (Fluent)",
+  "name": "x_902080_msmplnpkr_fluent_scoring_method",
+  "extends": "",
+  "is_extendable": false,
+  "access": "public",
+  "create_access_controls": true,
+  "live_feed_enabled": false,
+  "fields": [
+    {
+      "name": "name",
+      "type": "string",
+      "max_length": 100,
+      "mandatory": true,
+      "label": "Method Name",
+      "description": "Display name of scoring method"
+    },
+    {
+      "name": "description",
+      "type": "string",
+      "max_length": 1000,
+      "mandatory": false,
+      "label": "Description",
+      "description": "Explanation of this scoring approach"
+    },
+    {
+      "name": "is_default",
+      "type": "boolean",
+      "mandatory": true,
+      "default_value": "false",
+      "label": "Is Default",
+      "description": "Whether this is the default method for new sessions"
+    },
+    {
+      "name": "is_active",
+      "type": "boolean",
+      "mandatory": true,
+      "default_value": "true",
+      "label": "Is Active",
+      "description": "Whether this method is available for use"
+    },
+    {
+      "name": "is_numeric",
+      "type": "boolean",
+      "mandatory": true,
+      "default_value": "false",
+      "label": "Is Numeric",
+      "description": "Whether values can be averaged mathematically"
+    },
+    {
+      "name": "order",
+      "type": "integer",
+      "mandatory": true,
+      "default_value": "0",
+      "label": "Display Order",
+      "description": "Sort sequence in lists"
+    },
+    {
+      "name": "created_on",
+      "type": "glide_date_time",
+      "mandatory": false,
+      "label": "Created On",
+      "read_only": true
+    },
+    {
+      "name": "updated_on",
+      "type": "glide_date_time",
+      "mandatory": false,
+      "label": "Updated On",
+      "read_only": true
+    }
+  ],
+  "indexes": [
+    {
+      "name": "idx_scoring_active_order",
+      "fields": ["is_active", "order"],
+      "unique": false,
+      "description": "Optimized for displaying active methods"
+    },
+    {
+      "name": "idx_scoring_default",
+      "fields": ["is_default", "is_active"],
+      "unique": false,
+      "description": "Optimized for finding default method"
+    }
+  ]
+}

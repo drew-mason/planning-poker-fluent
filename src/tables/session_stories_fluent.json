@@ -1,0 +1,170 @@
+{
+  "label": "Session Stories (Fluent)",
+  "name": "x_902080_msmplnpkr_fluent_session_stories",
+  "extends": "",
+  "is_extendable": false,
+  "access": "public",
+  "create_access_controls": true,
+  "live_feed_enabled": false,
+  "fields": [
+    {
+      "name": "session",
+      "type": "reference",
+      "reference": "x_902080_msmplnpkr_fluent_planning_session",
+      "mandatory": true,
+      "label": "Planning Session",
+      "description": "Parent session"
+    },
+    {
+      "name": "story",
+      "type": "reference",
+      "reference": "rm_story",
+      "mandatory": false,
+      "label": "Story",
+      "description": "Reference to Agile story (if exists)"
+    },
+    {
+      "name": "title",
+      "type": "string",
+      "max_length": 255,
+      "mandatory": true,
+      "label": "Title",
+      "description": "Story title"
+    },
+    {
+      "name": "description",
+      "type": "string",
+      "max_length": 4000,
+      "mandatory": false,
+      "label": "Description",
+      "description": "Story details"
+    },
+    {
+      "name": "acceptance_criteria",
+      "type": "string",
+      "max_length": 4000,
+      "mandatory": false,
+      "label": "Acceptance Criteria",
+      "description": "Story acceptance criteria"
+    },
+    {
+      "name": "order",
+      "type": "integer",
+      "mandatory": true,
+      "default_value": "0",
+      "label": "Order",
+      "description": "Display sequence in session"
+    },
+    {
+      "name": "status",
+      "type": "string",
+      "max_length": 40,
+      "mandatory": true,
+      "default_value": "pending",
+      "label": "Status",
+      "description": "Story voting state",
+      "choice": [
+        {"value": "pending", "label": "Pending", "sequence": 0},
+        {"value": "voting", "label": "Voting", "sequence": 1},
+        {"value": "revealed", "label": "Revealed", "sequence": 2},
+        {"value": "completed", "label": "Completed", "sequence": 3},
+        {"value": "skipped", "label": "Skipped", "sequence": 4}
+      ]
+    },
+    {
+      "name": "final_score",
+      "type": "string",
+      "max_length": 40,
+      "mandatory": false,
+      "label": "Final Score",
+      "description": "Agreed-upon estimate"
+    },
+    {
+      "name": "vote_count",
+      "type": "integer",
+      "mandatory": true,
+      "default_value": "0",
+      "label": "Vote Count",
+      "description": "Number of votes cast",
+      "read_only": true
+    },
+    {
+      "name": "times_revoted",
+      "type": "integer",
+      "mandatory": true,
+      "default_value": "0",
+      "label": "Times Re-voted",
+      "description": "How many times voting was reset",
+      "read_only": true
+    },
+    {
+      "name": "average_score",
+      "type": "decimal",
+      "mandatory": false,
+      "label": "Average Score",
+      "description": "Numeric average (if applicable)",
+      "read_only": true
+    },
+    {
+      "name": "min_score",
+      "type": "string",
+      "max_length": 40,
+      "mandatory": false,
+      "label": "Minimum Score",
+      "description": "Lowest vote",
+      "read_only": true
+    },
+    {
+      "name": "max_score",
+      "type": "string",
+      "max_length": 40,
+      "mandatory": false,
+      "label": "Maximum Score",
+      "description": "Highest vote",
+      "read_only": true
+    },
+    {
+      "name": "consensus_reached",
+      "type": "boolean",
+      "mandatory": true,
+      "default_value": "false",
+      "label": "Consensus Reached",
+      "description": "Whether all votes match",
+      "read_only": true
+    },
+    {
+      "name": "created_on",
+      "type": "glide_date_time",
+      "mandatory": false,
+      "label": "Created On",
+      "read_only": true
+    },
+    {
+      "name": "updated_on",
+      "type": "glide_date_time",
+      "mandatory": false,
+      "label": "Updated On",
+      "read_only": true
+    }
+  ],
+  "indexes": [
+    {
+      "name": "idx_story_session_order",
+      "fields": ["session", "order"],
+      "unique": false,
+      "description": "Optimized for ordered story retrieval"
+    },
+    {
+      "name": "idx_story_session_status",
+      "fields": ["session", "status"],
+      "unique": false,
+      "description": "Optimized for status-based queries"
+    },
+    {
+      "name": "idx_story_reference",
+      "fields": ["story"],
+      "unique": false,
+      "description": "Optimized for story reference lookups"
+    }
+  ]
+}

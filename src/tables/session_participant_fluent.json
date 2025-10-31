@@ -1,0 +1,90 @@
+{
+  "label": "Session Participant (Fluent)",
+  "name": "x_902080_msmplnpkr_fluent_session_participant",
+  "extends": "",
+  "is_extendable": false,
+  "access": "public",
+  "create_access_controls": true,
+  "live_feed_enabled": false,
+  "fields": [
+    {
+      "name": "session",
+      "type": "reference",
+      "reference": "x_902080_msmplnpkr_fluent_planning_session",
+      "mandatory": true,
+      "label": "Planning Session",
+      "description": "Parent session"
+    },
+    {
+      "name": "user",
+      "type": "reference",
+      "reference": "sys_user",
+      "mandatory": true,
+      "label": "User",
+      "description": "Participant user"
+    },
+    {
+      "name": "role",
+      "type": "string",
+      "max_length": 40,
+      "mandatory": true,
+      "default_value": "participant",
+      "label": "Role",
+      "description": "Participant role in session",
+      "choice": [
+        {"value": "dealer", "label": "Dealer", "sequence": 0},
+        {"value": "participant", "label": "Participant", "sequence": 1},
+        {"value": "spectator", "label": "Spectator", "sequence": 2}
+      ]
+    },
+    {
+      "name": "is_active",
+      "type": "boolean",
+      "mandatory": true,
+      "default_value": "true",
+      "label": "Is Active",
+      "description": "Whether participant is currently active"
+    },
+    {
+      "name": "joined_at",
+      "type": "glide_date_time",
+      "mandatory": true,
+      "label": "Joined At",
+      "description": "When participant joined session"
+    },
+    {
+      "name": "last_activity",
+      "type": "glide_date_time",
+      "mandatory": false,
+      "label": "Last Activity",
+      "description": "Last interaction timestamp"
+    },
+    {
+      "name": "created_on",
+      "type": "glide_date_time",
+      "mandatory": false,
+      "label": "Created On",
+      "read_only": true
+    }
+  ],
+  "indexes": [
+    {
+      "name": "idx_participant_session_user",
+      "fields": ["session", "user"],
+      "unique": true,
+      "description": "Ensure one record per user per session"
+    },
+    {
+      "name": "idx_participant_session_active",
+      "fields": ["session", "is_active", "role"],
+      "unique": false,
+      "description": "Optimized for active participant queries"
+    },
+    {
+      "name": "idx_participant_user_active",
+      "fields": ["user", "is_active"],
+      "unique": false,
+      "description": "Optimized for user session lookups"
+    }
+  ]
+}

@@ -1,0 +1,93 @@
+{
+  "label": "Planning Vote (Fluent)",
+  "name": "x_902080_msmplnpkr_fluent_planning_vote",
+  "extends": "",
+  "is_extendable": false,
+  "access": "public",
+  "create_access_controls": true,
+  "live_feed_enabled": false,
+  "fields": [
+    {
+      "name": "session",
+      "type": "reference",
+      "reference": "x_902080_msmplnpkr_fluent_planning_session",
+      "mandatory": true,
+      "label": "Planning Session",
+      "description": "Parent session"
+    },
+    {
+      "name": "session_story",
+      "type": "reference",
+      "reference": "x_902080_msmplnpkr_fluent_session_stories",
+      "mandatory": true,
+      "label": "Session Story",
+      "description": "Story being voted on"
+    },
+    {
+      "name": "voter",
+      "type": "reference",
+      "reference": "sys_user",
+      "mandatory": true,
+      "label": "Voter",
+      "description": "User casting vote"
+    },
+    {
+      "name": "vote_value",
+      "type": "string",
+      "max_length": 40,
+      "mandatory": true,
+      "label": "Vote Value",
+      "description": "Estimate given"
+    },
+    {
+      "name": "vote_sequence",
+      "type": "integer",
+      "mandatory": true,
+      "default_value": "1",
+      "label": "Vote Sequence",
+      "description": "Version number (increments on re-votes)"
+    },
+    {
+      "name": "is_current",
+      "type": "boolean",
+      "mandatory": true,
+      "default_value": "true",
+      "label": "Is Current",
+      "description": "Whether this is the active vote"
+    },
+    {
+      "name": "voted_at",
+      "type": "glide_date_time",
+      "mandatory": true,
+      "label": "Voted At",
+      "description": "Timestamp of vote"
+    },
+    {
+      "name": "created_on",
+      "type": "glide_date_time",
+      "mandatory": false,
+      "label": "Created On",
+      "read_only": true
+    }
+  ],
+  "indexes": [
+    {
+      "name": "idx_vote_story_voter_current",
+      "fields": ["session_story", "voter", "is_current"],
+      "unique": false,
+      "description": "Optimized for current vote lookups"
+    },
+    {
+      "name": "idx_vote_session_current",
+      "fields": ["session", "is_current"],
+      "unique": false,
+      "description": "Optimized for session vote queries"
+    },
+    {
+      "name": "idx_vote_story_sequence",
+      "fields": ["session_story", "vote_sequence", "is_current"],
+      "unique": false,
+      "description": "Optimized for vote history queries"
+    }
+  ]
+}
